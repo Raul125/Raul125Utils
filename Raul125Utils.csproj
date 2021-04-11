@@ -3,9 +3,18 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <AssemblyName>DamageIndicator</AssemblyName>
+    <AssemblyName>Raul125Utils</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <RootNamespace>DamageIndicator</RootNamespace>
+    <RootNamespace>Raul125Utils</RootNamespace>
+    <Authors>Raul125</Authors>
+    <Copyright>Copyright © Exiled Team 2021 - 2022</Copyright>
+    <PackageProjectUrl>https://github.com/Raul125/Raul125Utils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Raul125/Raul125Utils</RepositoryUrl>
+    <Company>Raul125</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <Import Project="../EXILED.props" />

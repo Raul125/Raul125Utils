@@ -1,8 +1,8 @@
-// <copyright file="DamageIndicator.cs" company="PlaceholderCompany">
+// <copyright file="Raul125Utils.cs" company="PlaceholderCompany">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-namespace DamageIndicator
+namespace Raul125Utils
 {
     using System;
 
@@ -12,29 +12,31 @@ namespace DamageIndicator
     /// <summary>
     /// The example plugin.
     /// </summary>
-    public class DamageIndicator : Plugin<Config>
+    public class Raul125Utils : Plugin<Config>
     {
-        private static DamageIndicator singleton = new DamageIndicator();
+        private static Raul125Utils singleton = new Raul125Utils();
 
-        private Handlers.Mixed eventsPl;
+        private Handlers.Player eventsPl;
+        private Handlers.Server eventsSv;
+        private Handlers.Warhead eventsWh;
 
-        private DamageIndicator()
+        private Raul125Utils()
         {
         }
 
         /// <summary>
         /// Gets the only existing instance of this plugin.
         /// </summary>
-        public static DamageIndicator Instance => singleton;
+        public static Raul125Utils Instance => singleton;
 
         /// <inheritdoc/>
         public override string Author { get; } = "Raul125";
 
         /// <inheritdoc/>
-        public override string Name { get; } = "DamageIndicator";
+        public override string Name { get; } = "Raul125Utils";
 
         /// <inheritdoc/>
-        public override string Prefix { get; } = "DamageIndicator";
+        public override string Prefix { get; } = "Raul125Utils";
 
         /// <inheritdoc/>
         public override Version Version { get; } = new Version(1, 0, 0);
@@ -66,8 +68,12 @@ namespace DamageIndicator
         /// </summary>
         private void RegisterEvents()
         {
-            this.eventsPl = new Handlers.Mixed();
+            this.eventsPl = new Handlers.Player();
+            this.eventsSv = new Handlers.Server();
+            this.eventsWh = new Handlers.Warhead();
             Exiled.Events.Handlers.Player.Hurting += this.eventsPl.OnHurting;
+            Exiled.Events.Handlers.Server.SendingConsoleCommand += this.eventsSv.OnSendingConsoleCommand;
+            Exiled.Events.Handlers.Warhead.Starting += this.eventsWh.OnStarting;
         }
 
         /// <summary>
@@ -76,7 +82,11 @@ namespace DamageIndicator
         private void UnregisterEvents()
         {
             Exiled.Events.Handlers.Player.Hurting -= this.eventsPl.OnHurting;
+            Exiled.Events.Handlers.Server.SendingConsoleCommand -= this.eventsSv.OnSendingConsoleCommand;
+            Exiled.Events.Handlers.Warhead.Starting -= this.eventsWh.OnStarting;
             this.eventsPl = null;
+            this.eventsSv = null;
+            this.eventsWh = null;
         }
     }
 }

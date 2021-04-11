@@ -1,25 +1,31 @@
 // -----------------------------------------------------------------------
-// <copyright file="Mixed.cs" company="PlaceholderCompany">
+// <copyright file="Player.cs" company="Raul125">
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace DamageIndicator.Handlers
+namespace Raul125Utils.Handlers
 {
     using System.Collections.Generic;
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
     using MEC;
-    using static DamageIndicator;
+    using static Raul125Utils;
 
     /// <summary>
     /// Handles player events.
     /// </summary>
-    internal sealed class Mixed
+    internal sealed class Player
     {
-        /// <inheritdoc cref="Handlers.Mixed.OnHurting(HurtingEventArgs)"/>
+        /// <inheritdoc cref="Handlers.Player.OnHurting(HurtingEventArgs)"/>
         public void OnHurting(HurtingEventArgs ev)
         {
+            // DamageHint Part
+            if (Instance.Config.DamageHintIsEnabled == false)
+            {
+                return;
+            }
+
             if (ev.IsAllowed == false)
             {
                 return;
@@ -35,7 +41,7 @@ namespace DamageIndicator.Handlers
                 return;
             }
 
-            ev.Attacker.ShowHint(Instance.Config.Hint.Replace("%damage", ev.Amount.ToString()).Replace("%player", ev.Target.Nickname));
+            ev.Attacker.ShowHint(Instance.Config.DamageHint.Replace("%damage", ev.Amount.ToString()).Replace("%player", ev.Target.Nickname), Instance.Config.DamageHintTime);
         }
     }
 }
