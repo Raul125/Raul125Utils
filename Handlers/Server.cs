@@ -41,13 +41,14 @@ namespace Raul125Utils.Handlers
                 {
                     foreach (Exiled.API.Features.Player ply in Exiled.API.Features.Player.List.Where(x => x.Team == Team.MTF && x.IsAlive && x.ReferenceHub.characterClassManager.NetworkCurUnitName == ev.Player.ReferenceHub.characterClassManager.NetworkCurUnitName).ToList())
                     {
+                        string msg = string.Join(separator: " ", values: ev.Arguments);
                         if (Raul125Utils.Instance.Config.OrdersSystemHint)
                         {
-                            ev.Player.ShowHint($"<color={Raul125Utils.Instance.Config.OrdersSystemColor}>" + ev.Arguments.ToString() + "</color>", Raul125Utils.Instance.Config.OrdersSystemTime);
+                            ev.Player.ShowHint($"<color={Raul125Utils.Instance.Config.OrdersSystemColor}>" + msg + "</color>", Raul125Utils.Instance.Config.OrdersSystemTime);
                         }
                         else
                         {
-                            ev.Player.Broadcast((ushort)Raul125Utils.Instance.Config.OrdersSystemTime, $"<color={Raul125Utils.Instance.Config.OrdersSystemColor}>" + ev.Arguments.ToString() + "</color>");
+                            ev.Player.Broadcast((ushort)Raul125Utils.Instance.Config.OrdersSystemTime, $"<color={Raul125Utils.Instance.Config.OrdersSystemColor}>" + msg + "</color>");
                         }
                     }
 
