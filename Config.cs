@@ -57,6 +57,12 @@ namespace Raul125Utils
         /// <summary>
         /// Gets the int config.
         /// </summary>
+        [Description("Color of the displayed message")]
+        public string OrdersSystemColor { get; private set; } = "#1e18dc";
+
+        /// <summary>
+        /// Gets the int config.
+        /// </summary>
         [Description("Individual cooldown of a commander, necessary time to pass before sending another order")]
         public float OrdersSystemCooldownTime { get; private set; } = 25f;
 

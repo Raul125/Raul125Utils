@@ -43,11 +43,11 @@ namespace Raul125Utils.Handlers
                     {
                         if (Raul125Utils.Instance.Config.OrdersSystemHint)
                         {
-                            ev.Player.ShowHint(ev.Arguments.ToString(), Raul125Utils.Instance.Config.OrdersSystemTime);
+                            ev.Player.ShowHint($"<color={Raul125Utils.Instance.Config.OrdersSystemColor}>" + ev.Arguments.ToString() + "</color>", Raul125Utils.Instance.Config.OrdersSystemTime);
                         }
                         else
                         {
-                            ev.Player.Broadcast((ushort)Raul125Utils.Instance.Config.OrdersSystemTime, ev.Arguments.ToString());
+                            ev.Player.Broadcast((ushort)Raul125Utils.Instance.Config.OrdersSystemTime, $"<color={Raul125Utils.Instance.Config.OrdersSystemColor}>" + ev.Arguments.ToString() + "</color>");
                         }
                     }
 
