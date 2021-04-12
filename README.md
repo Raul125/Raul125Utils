@@ -3,6 +3,8 @@
 <a href="https://github.com/Raul125/Raul125Utils/releases"><img src="https://img.shields.io/github/v/release/Raul125/Raul125Utils?include_prereleases&label=Release" alt="Releases"></a>
 <a href="https://github.com/Raul125/Raul125Utils/releases"><img src="https://img.shields.io/github/downloads/Raul125/Raul125Utils/total?label=Downloads" alt="Downloads"></a>
 
+**!All content of this plugin are plugin requests¡**
+
 ```yaml
 Raul125Utils:
 # Indicates whether the plugin is enabled or not
@@ -65,6 +67,25 @@ Raul125Utils:
     <color=yellow>Take a screenshot and report this to the administrators</color>
 ```
 
-Readme soon
+# Damage Hint
+You recive a hint when you damage other player.
+
+# Orders System
+If you are a MtfCommander you can use the command `c Order`, it will display a hint or a broadcast, depends of you configuration to all mtf players of your unit.
+
+# Detonation Requeriment
+You need to activate a configurable amount of generators to activate the warhead, it doesn't affect to the R.A button.
+
+# Energy Overload
+When a generator is activated, there is a chance that checkpoints will be blocked and the Hcz lights will turn off, all is configurable.
+
+# Emergency Backup
+If you are in the Mtf side you can call an Emergency Backup Team, you have to go to the intercom, have a radio in the hands and start speaking, then, a mtf squad will spawn, it has cooldown and max calls per round.
+
+# Hard096Rp
+If the Scp096 has a target, it won't calm.
+
+# TeamKill BroadCast
+If you suffer a teamkill, you will recive a broadcast with the nickname of the killer, all is configurable.
 
 Work in progress...
