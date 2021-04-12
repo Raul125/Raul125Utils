@@ -9,7 +9,7 @@
 You recive a hint when you damage other player.
 
 # Orders System
-If you are a MtfCommander you can use the command `c Order`, it will display a hint or a broadcast, depends of you configuration to all mtf players of your unit.
+If you are a MtfCommander you can use the command `.c Order`, it will display a hint or a broadcast, depends of you configuration to all mtf players of your unit.
 
 # Detonation Requeriment
 You need to activate a configurable amount of generators to activate the warhead, it doesn't affect to the R.A button.
