@@ -3,6 +3,9 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
+#pragma warning disable SA1200 // Using directives should be placed correctly
+using Raul125Utils.Methods;
+#pragma warning restore SA1200 // Using directives should be placed correctly
 
 namespace Raul125Utils.Handlers
 {
@@ -10,10 +13,11 @@ namespace Raul125Utils.Handlers
     using System.Linq;
     using Exiled.API.Features;
     using Exiled.Events.EventArgs;
+    using Interactables.Interobjects.DoorUtils;
     using MEC;
 
     /// <summary>
-    /// Handles player events.
+    /// Handles server events.
     /// </summary>
     internal sealed class Server
     {
@@ -33,7 +37,11 @@ namespace Raul125Utils.Handlers
 
                 if (this.ordersSystemCooldown.TryGetValue(ev.Player, out bool cooldown))
                 {
-                    ev.ReturnMessage = " <b><color=red>Don't spam...</color></b>";
+                    if (cooldown == true)
+                    {
+                        ev.ReturnMessage = " <b><color=red>Don't spam...</color></b>";
+                    }
+
                     return;
                 }
 
@@ -65,6 +73,14 @@ namespace Raul125Utils.Handlers
                     ev.ReturnMessage = " <b><color=red>You aren't an <color=blue>NtfCommander</color></color></b>";
                 }
             }
+        }
+
+        /// <inheritdoc cref="Handlers.Server.OnWaitingForPlayers()"/>
+        public void OnWaitingForPlayers()
+        {
+            Methods.Methods.BackupsCooldown = false;
+            Methods.Methods.BackupsPerRound = 0;
+            Methods.Methods.Scp096Targets.Clear();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Raul125Utils.Handlers
     using MEC;
 
     /// <summary>
-    /// Handles player events.
+    /// Handles warhead events.
     /// </summary>
     internal sealed class Warhead
     {
@@ -35,23 +35,29 @@ namespace Raul125Utils.Handlers
                 return;
             }
 
+            if (ev.Player.IsHost)
+            {
+                return;
+            }
+
             ev.IsAllowed = false;
 
-            if (Map.ActivatedGenerators > 1 - Raul125Utils.Instance.Config.DetonationRequirementGenerators)
+            if (Exiled.API.Features.Map.ActivatedGenerators > Raul125Utils.Instance.Config.DetonationRequirementGenerators - 1)
             {
                 ev.IsAllowed = true;
             }
 
             if (ev.IsAllowed == false)
             {
-                int gener = Raul125Utils.Instance.Config.DetonationRequirementGenerators - Map.ActivatedGenerators;
+                Log.Info("Es false");
+                int gener = Raul125Utils.Instance.Config.DetonationRequirementGenerators - Exiled.API.Features.Map.ActivatedGenerators;
                 if (gener == 1)
                 {
-                    ev.Player.ShowHint($"<color=red>You need to activate <color=green><b>{gener}</b></color> more generator to activate the warhead</color>", 5f);
+                    ev.Player.ShowHint($"<color=red>You need to activate <color=green><b>{gener}</b></color> more generator to start the warhead</color>", 5f);
                 }
                 else
                 {
-                    ev.Player.ShowHint($"<color=red>You need to activate <color=green><b>{gener}</b></color> more generators to activate the warhead</color>", 5f);
+                    ev.Player.ShowHint($"<color=red>You need to activate <color=green><b>{gener}</b></color> more generators to start the warhead</color>", 5f);
                 }
             }
         }
