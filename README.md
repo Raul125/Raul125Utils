@@ -3,7 +3,7 @@
 <a href="https://github.com/Raul125/Raul125Utils/releases"><img src="https://img.shields.io/github/v/release/Raul125/Raul125Utils?include_prereleases&label=Release" alt="Releases"></a>
 <a href="https://github.com/Raul125/Raul125Utils/releases"><img src="https://img.shields.io/github/downloads/Raul125/Raul125Utils/total?label=Downloads" alt="Downloads"></a>
 
-**<size=50>! All content of this plugin are plugin requests ¡</size>**
+**<size=#50>! All content of this plugin are plugin requests ¡</size>**
 
 ```yaml
 Raul125Utils:
