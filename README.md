@@ -81,7 +81,7 @@ Raul125Utils:
   team_kill_broad_cast_time: 15
   # Broadcast sent when you are teamkilled
   team_kill_broad_cast_content: >-
-    <color=yellow>You were </color><color=red>teamkilled by </color><color=green>%player</color>
+    <color=yellow>You were </color><color=red>teamkilled by </color><color=green>%player Id: %id</color>
 
     <color=yellow>Date: %date</color>
 
