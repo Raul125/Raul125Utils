@@ -55,6 +55,11 @@ namespace Raul125Utils.Handlers
         /// <inheritdoc cref="Handlers.Player.OnIntercomSpeaking(IntercomSpeakingEventArgs)"/>
         public void OnIntercomSpeaking(IntercomSpeakingEventArgs ev)
         {
+            if (Instance.Config.EmergencyBackupIsEnabled == false)
+            {
+                return;
+            }
+
             if (ev.Player == null)
             {
                 return;
@@ -120,7 +125,7 @@ namespace Raul125Utils.Handlers
             {
                 if (ev.Killer.Team == ev.Target.Team)
                 {
-                    ev.Target.Broadcast((ushort)Instance.Config.TeamKillBroadCastTime, Instance.Config.TeamKillBroadCastContent.Replace("%player", ev.Killer.Nickname).Replace("%date", DateTime.Now.ToString()));
+                    ev.Target.Broadcast((ushort)Instance.Config.TeamKillBroadCastTime, Instance.Config.TeamKillBroadCastContent.Replace("%player", ev.Killer.Nickname).Replace("%id", ev.Killer.UserId).Replace("%date", DateTime.Now.ToString()));
                 }
             }
         }
@@ -133,7 +138,7 @@ namespace Raul125Utils.Handlers
                 return;
             }
 
-            if (Raul125Utils.Instance.Config.Hard096RPIsEnabled == true)
+            if (Instance.Config.Hard096RPIsEnabled == true)
             {
                 if (Methods.Methods.Scp096Targets.Contains(ev.Player))
                 {

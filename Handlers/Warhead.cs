@@ -49,7 +49,6 @@ namespace Raul125Utils.Handlers
 
             if (ev.IsAllowed == false)
             {
-                Log.Info("Es false");
                 int gener = Raul125Utils.Instance.Config.DetonationRequirementGenerators - Exiled.API.Features.Map.ActivatedGenerators;
                 if (gener == 1)
                 {

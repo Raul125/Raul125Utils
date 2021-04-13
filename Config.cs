@@ -160,6 +160,6 @@ namespace Raul125Utils
         /// Gets the int config.
         /// </summary>
         [Description("Broadcast sent when you are teamkilled")]
-        public string TeamKillBroadCastContent { get; private set; } = "<color=yellow>You were </color><color=red>teamkilled by </color><color=green>%player</color>\n<color=yellow>Date: %date</color>\n<color=yellow>Take a screenshot and report this to the administrators</color>";
+        public string TeamKillBroadCastContent { get; private set; } = "<color=yellow>You were </color><color=red>teamkilled by </color><color=green>%player Id: %id</color>\n<color=yellow>Date: %date</color>\n<color=yellow>Take a screenshot and report this to the administrators</color>";
     }
 }
