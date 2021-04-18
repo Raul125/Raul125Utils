@@ -8,6 +8,7 @@ namespace Raul125Utils
 
     using Exiled.API.Enums;
     using Exiled.API.Features;
+    using HarmonyLib;
 
     /// <summary>
     /// Raul125 Utils Plugin.
@@ -19,22 +20,16 @@ namespace Raul125Utils
         /// </summary>
         public static readonly System.Random Rand = new System.Random();
 
-        private static Raul125Utils singleton = new Raul125Utils();
-
         private Handlers.Player eventsPl;
         private Handlers.Server eventsSv;
         private Handlers.Warhead eventsWh;
         private Handlers.Map eventsMap;
         private Handlers.Scp096 events096;
 
-        private Raul125Utils()
-        {
-        }
-
         /// <summary>
         /// Gets the only existing instance of this plugin.
         /// </summary>
-        public static Raul125Utils Instance => singleton;
+        public static Raul125Utils Instance => Singleton;
 
         /// <inheritdoc/>
         public override string Author { get; } = "Raul125";
@@ -46,7 +41,7 @@ namespace Raul125Utils
         public override string Prefix { get; } = "Raul125Utils";
 
         /// <inheritdoc/>
-        public override Version Version { get; } = new Version(1, 0, 5);
+        public override Version Version { get; } = new Version(1, 0, 7);
 
         /// <inheritdoc/>
         public override Version RequiredExiledVersion { get; } = new Version(2, 8, 0);
@@ -54,11 +49,13 @@ namespace Raul125Utils
         /// <inheritdoc/>
         public override PluginPriority Priority { get; } = PluginPriority.Lower;
 
+        private static Raul125Utils Singleton { get; set; }
+
         /// <inheritdoc/>
         public override void OnEnabled()
         {
             base.OnEnabled();
-
+            Singleton = this;
             this.RegisterEvents();
         }
 
@@ -66,7 +63,7 @@ namespace Raul125Utils
         public override void OnDisabled()
         {
             base.OnDisabled();
-
+            Singleton = null;
             this.UnregisterEvents();
         }
 
