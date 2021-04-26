@@ -41,7 +41,7 @@ namespace Raul125Utils
         public override string Prefix { get; } = "Raul125Utils";
 
         /// <inheritdoc/>
-        public override Version Version { get; } = new Version(1, 0, 7);
+        public override Version Version { get; } = new Version(1, 0, 8);
 
         /// <inheritdoc/>
         public override Version RequiredExiledVersion { get; } = new Version(2, 8, 0);

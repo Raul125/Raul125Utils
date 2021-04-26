@@ -139,6 +139,12 @@ namespace Raul125Utils
         public int EmergencyBackupMaxPerRound { get; private set; } = 2;
 
         /// <summary>
+        /// Gets the string config.
+        /// </summary>
+        [Description("Hint displayed when you call an emergency backup team")]
+        public string EmergencyBackupHint { get; private set; } = "You have called a Emergency Backup Team";
+
+        /// <summary>
         /// Gets a value indicating whether Hard096RP is enabled or not.
         /// </summary>
         [Description("Indicates whether Hard096RP part is enabled")]

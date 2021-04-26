@@ -88,7 +88,7 @@ namespace Raul125Utils.Handlers
                 }
 
                 Respawn.ForceWave(Respawning.SpawnableTeamType.NineTailedFox, true);
-                ev.Player.ShowHint("You have called a Emergency Backup Team", 10);
+                ev.Player.ShowHint(Instance.Config.EmergencyBackupHint, 10);
                 Methods.Methods.BackupsCooldown = true;
                 Methods.Methods.BackupsPerRound += 1;
                 Timing.RunCoroutine(Methods.Methods.EmergencyBackupCooldown());
