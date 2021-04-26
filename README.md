@@ -73,6 +73,8 @@ Raul125Utils:
   emergency_backup_cooldown: 200
   # Max Backups per round
   emergency_backup_max_per_round: 2
+  # Hint displayed when you call an emergency backup team
+  emergency_backup_hint: 
   # Indicates whether Hard096RP part is enabled
   hard096_r_p_is_enabled: true
   # Indicates whether TeamKillBroadcast part is enabled
