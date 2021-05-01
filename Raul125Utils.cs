@@ -87,7 +87,6 @@ namespace Raul125Utils
             Exiled.Events.Handlers.Map.GeneratorActivated += this.eventsMap.OnGeneratorActivated;
             Exiled.Events.Handlers.Scp096.CalmingDown += this.events096.OnCalmingDown;
             Exiled.Events.Handlers.Scp096.AddingTarget += this.events096.OnAddingTarget;
-			
         }
 
         /// <summary>
