@@ -3,28 +3,28 @@
 <a href="https://github.com/Raul125/Raul125Utils/releases"><img src="https://img.shields.io/github/v/release/Raul125/Raul125Utils?include_prereleases&label=Release" alt="Releases"></a>
 <a href="https://github.com/Raul125/Raul125Utils/releases"><img src="https://img.shields.io/github/downloads/Raul125/Raul125Utils/total?label=Downloads" alt="Downloads"></a>
 
-**! All content of this plugin are plugin requests ¡**
+**¡All content of this plugin are plugin requests!**
 
 # Damage Hint
-You recive a hint when you damage other player.
+You receive a hint when you damage another player.
 
 # Orders System
-If you are a MtfCommander you can use the command `.c Order`, it will display a hint or a broadcast, depends of you configuration to all mtf players of your unit.
+If you are an MTF Commander, you can use the command `.c Order`. It will display a hint or a broadcast, depending on your configuration, to all MTF players in your unit.
 
-# Detonation Requeriment
-You need to activate a configurable amount of generators to activate the warhead, it doesn't affect to the R.A button.
+# Detonation Requirement
+You need to activate a configurable number of generators to arm the warhead. This doesn't affect the R.A. button.
 
 # Energy Overload
-When a generator is activated, there is a chance that checkpoints will be blocked and the Hcz lights will turn off, all is configurable.
+When a generator is activated, there is a chance that checkpoints will be blocked and the HCZ lights will turn off. All of this is configurable.
 
 # Emergency Backup
-If you are in the Mtf side you can call an Emergency Backup Team, you have to go to the intercom, have a radio in the hands and start speaking, then, a mtf squad will spawn, it has cooldown and max calls per round.
+If you are on the MTF side, you can call an Emergency Backup Team. You need to go to the intercom, have a radio in your hand, and start speaking. Then, an MTF squad will spawn. This has a cooldown and a maximum number of calls per round.
 
 # Hard096Rp
-If the Scp096 has a target, it won't calm.
+If SCP-096 has a target, it will not calm down.
 
-# TeamKill BroadCast
-If you suffer a teamkill, you will recive a broadcast with the nickname of the killer, all is configurable.
+# TeamKill Broadcast
+If you are teamkilled, you will receive a broadcast with the nickname of the killer. All of this is configurable.
 
 ```yaml
 Raul125Utils:
@@ -89,5 +89,3 @@ Raul125Utils:
 
     <color=yellow>Take a screenshot and report this to the administrators</color>
 ```
-
-Work in progress...
